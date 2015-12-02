@@ -1,0 +1,101 @@
+/* ExampleSnippets.txt
+**
+** Example code snippets for XML Essential Training
+*/
+
+---------------------------------------------------------------
+
+CHAPTER 4: WORKING WITH XML
+
+--- First XML File
+
+<FirstTag>
+ This is ou fisrt XML file
+ <!-- This is a comment in the file -->
+</FirstTag>
+
+--- XML and CSS
+<?xml-stylesheet type="text/css" href="FirstXMLFile.css"?>
+
+FirstTag
+{
+    display : block;
+    font-family : Arial;
+    font-size : large;
+    color : Blue;
+}
+
+--- Styling Tags with CSS
+
+Name {
+  color: #0D3427;
+
+
+
+
+
+--- Styling Tags with CSS
+<?xml-stylesheet type="text/css" href="businesscard.css"?>
+
+Name {
+  color: #0D3427;
+  font-weight: bold;
+  font-size: 140%;
+  display: block;
+  margin-bottom: 3%;
+}
+
+phone {
+  font-size: 90%;
+  color: #523819;
+  font-size: 90%;
+  display: blok;
+}
+
+email {
+  color: #0D3427
+  font-size: 90%;
+  font-weight: bold;
+  display: blok;
+  margin-top: 3%;
+}
+
+--- Advanced XML with CSS
+<?xml-stylesheet type="text/css" href="businesscard_CSS2.css"?>
+
+Name {
+  color: #0D3427;
+  font-weight: bold;
+  font-size: 140%;
+  display: block;
+  margin-bottom: 3%;
+}
+
+email {
+  color: 90%;
+  font-size: 90%;
+  font-weight: bold;
+  display: block;
+  margin-top: 3%;
+}
+email:before {content: "e-mail: "}
+
+phone {
+  font-size: 90%;
+  color: #523819;
+  font-size: 90%;
+  display: block;
+}
+phone:before {content: attr(type) ": "}
+phone[primary]:after {content: " (" attr(primary) ")"}
+
+CHAPTER 5: USING THE DOM
+
+--- Discovering DOM Content
+
+	function displaBusinessCardData() {
+		var xmldata1 = document.getElementById("xmldata1");
+		var bizCard = xmldata1.getElementByTagName("BusinessCard")[0]
+		
+		var name = "Name: " + bizCard.getElementsByTagName("Name")[0].firstChild.data;
+		var phone1Label = bizCard.getElementsByTagName("phone")[0].getAttribute("type") + ": "
